@@ -12,6 +12,9 @@ object ApplicationBuild extends Build {
     "org.webjars" %% "webjars-play" % "2.2.0",
     "org.webjars" % "bootstrap" % "3.0.1",
     "org.webjars" % "knockout" % "3.0.0",
+    "org.webjars" % "jsplumb" % "1.5.2",
+    "org.webjars" % "jquery" % "1.9.0",
+    "org.webjars" % "jquery-ui" % "1.9.2",
     "org.webjars" % "requirejs" % "2.1.8"
 
     // Add your own project dependencies in the form:
