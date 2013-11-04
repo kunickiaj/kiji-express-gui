@@ -1,11 +1,21 @@
+@(sources: Seq[String])
 @main("Welcome to KijiExpress") {
     <!-- Begin page content -->
     <div class="container">
         <div class="page-header">
             <h1>KijiExpress Flow Builder</h1>
         </div>
-        <div class="container well flow-canvas">
-            <div class="btn btn-warning flow-node">KijiTable<p><small>(Drag Me)</small></p></div>
+        <div class="container">
+            <div class="application-view">
+                <div class="flow-palette">
+                    @sources.map { source =>
+                      <div class="btn btn-warning palette-source">@source</div>
+                    }
+                </div>
+                <div class="flow-canvas well">
+                    <div class="btn btn-warning flow-node" data-bind="">KijiTable<p><small>(Drag Me)</small></p></div>
+                </div>
+            </div>
         </div>
     </div>
 }

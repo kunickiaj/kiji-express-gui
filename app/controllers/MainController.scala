@@ -10,7 +10,8 @@ object MainController extends Controller {
    * The index page.  This is the main entry point, seeing as this is a single page app.
    */
   def index(path: String) = Action {
-    Ok(views.html.index())
+    val palette = List("KijiTable")
+    Ok(views.html.index(palette))
   }
 
   /** The javascript router. */

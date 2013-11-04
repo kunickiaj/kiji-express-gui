@@ -15,6 +15,7 @@ object ApplicationBuild extends Build {
     "org.webjars" % "jsplumb" % "1.5.2",
     "org.webjars" % "jquery" % "1.9.0",
     "org.webjars" % "jquery-ui" % "1.9.2",
+    "org.webjars" % "jquery-ui-touch-punch" % "0.2.2-1",
     "org.webjars" % "requirejs" % "2.1.8"
 
     // Add your own project dependencies in the form:

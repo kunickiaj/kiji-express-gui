@@ -1,3 +1,11 @@
+/* Since there's no way to import the webjars bundled LESS sources
+ * they've been copied into the assets manually. This is to
+ * allow the use of the Bootstrap 3 LESS mixins.
+-------------------------------------------------- */
+
+@import 'less/variables';
+@import 'less/mixins';
+
 /* Sticky footer styles
 -------------------------------------------------- */
 
@@ -29,20 +37,53 @@ body {
 
 .container {
   width: auto;
-  max-width: 880px;
   padding: 0 15px;
 }
+
 .container .credit {
   margin: 20px 0;
 }
 
+.application-view {
+  .make-row();
+  .flow-palette {
+    .make-sm-column(2);
+    margin-bottom: 50px;
+  }
+  .flow-canvas {
+    .make-sm-column(10);
+  }
+}
+
+/* z-index values
+-------------------------------------------------- */
+@bottom: 1;
+@middle: 2;
+@top:  3;
+
 /* Creates the well that acts as our plumbing canvas
 -------------------------------------------------- */
-
 .flow-canvas {
   height: 550px;
+  z-index: @bottom;
+}
+
+/* Node styles (palette, flow, both)
+-------------------------------------------------- */
+.node {
+  position: absolute;
+  z-index: @middle;
+}
+
+.palette-node {
+  .node;
+  z-index: @top;
+}
+
+.palette-source {
+  .palette-node;
 }
 
 .flow-node {
-  position: absolute;
+  .node;
 }
