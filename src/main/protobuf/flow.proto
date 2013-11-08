@@ -1,0 +1,37 @@
+// Adjacency list.
+
+// Simple representation of an arbitrary mapping.
+message Property {
+  required bytes key = 1;
+  required bytes value = 2;
+}
+
+// Node in a graph. Contains a mapping of arbitrary key-value pairs.
+message Node {
+  optional string name = 1;
+
+  repeated Property properties = 2;
+}
+
+// Represents an edge in an undirected or directed graph. Contains a mapping of arbitrary
+// key-value pairs.
+message Edge {
+  // Index to the head node in the graph's node list.
+  required uint64 head = 1;
+
+  // Index to the tail node in the graph's node list.
+  required uint64 tail = 2;
+
+  repeated Property properties = 3;
+}
+
+// Represents an undirected or directed graph.
+message Graph {
+  repeated DirectedEdge edges = 1;
+  repeated Node nodes = 2;
+
+  repeated Property properties = 3;
+}
+
+
+// TODO: Add support for graph diffs/operations.
